@@ -1,0 +1,210 @@
+dpkg-buildpackage: set CFLAGS to default value: -g -O2
+dpkg-buildpackage: set CPPFLAGS to default value: 
+dpkg-buildpackage: set LDFLAGS to default value: 
+dpkg-buildpackage: set FFLAGS to default value: -g -O2
+dpkg-buildpackage: set CXXFLAGS to default value: -g -O2
+dpkg-buildpackage: source package stanford-server-mailman
+dpkg-buildpackage: source version 19
+dpkg-buildpackage: source changed by Xueshan Feng <sfeng@stanford.edu>
+ fakeroot debian/rules clean
+dh clean
+dh: Compatibility levels before 5 are deprecated.
+   dh_testdir
+   dh_auto_clean
+dh_auto_clean: Compatibility levels before 5 are deprecated.
+   dh_clean
+dh_clean: Compatibility levels before 5 are deprecated.
+ dpkg-source -i -b stanford-server-mailman
+dpkg-source: warning: source directory 'stanford-server-mailman' is not <sourcepackage>-<upstreamversion> 'stanford-server-mailman-19'
+dpkg-source: info: using source format `1.0'
+dpkg-source: info: building stanford-server-mailman in stanford-server-mailman_19.tar.gz
+dpkg-source: info: building stanford-server-mailman in stanford-server-mailman_19.dsc
+ dpkg-genchanges -S >../stanford-server-mailman_19_source.changes
+dpkg-genchanges: including full source code in upload
+dpkg-buildpackage: source only upload: Debian-native package
+ -> Running in no-targz mode
+I: using fakeroot in build.
+Current time: Wed Jun 29 23:56:02 PDT 2011
+pbuilder-time-stamp: 1309416962
+ -> copying local configuration
+ -> mounting /proc filesystem
+ -> mounting /dev/pts filesystem
+ -> policy-rc.d already exists
+Obtaining the cached apt archive contents
+Installing the build-deps
+ -> Attempting to satisfy build-dependencies
+ -> Creating pbuilder-satisfydepends-dummy package
+Package: pbuilder-satisfydepends-dummy
+Version: 0.invalid.0
+Architecture: i386
+Maintainer: Debian Pbuilder Team <pbuilder-maint@lists.alioth.debian.org>
+Description: Dummy package to satisfy dependencies with aptitude - created by pbuilder
+ This package was created automatically by pbuilder and should
+Depends: debhelper (>= 7.0.50~), rsync
+dpkg-deb: building package `pbuilder-satisfydepends-dummy' in `/tmp/satisfydepends-aptitude/pbuilder-satisfydepends-dummy.deb'.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+aptitude is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Selecting previously deselected package pbuilder-satisfydepends-dummy.
+(Reading database ... 11083 files and directories currently installed.)
+Unpacking pbuilder-satisfydepends-dummy (from .../pbuilder-satisfydepends-dummy.deb) ...
+dpkg: dependency problems prevent configuration of pbuilder-satisfydepends-dummy:
+ pbuilder-satisfydepends-dummy depends on rsync; however:
+  Package rsync is not installed.
+dpkg: error processing pbuilder-satisfydepends-dummy (--install):
+ dependency problems - leaving unconfigured
+Errors were encountered while processing:
+ pbuilder-satisfydepends-dummy
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading extended state information...
+Initializing package states...
+The following NEW packages will be installed:
+  libpopt0{a} rsync{a} 
+The following partially installed packages will be configured:
+  pbuilder-satisfydepends-dummy 
+0 packages upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/374kB of archives. After unpacking 799kB will be used.
+Writing extended state information...
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously deselected package libpopt0.
+(Reading database ... 11083 files and directories currently installed.)
+Unpacking libpopt0 (from .../libpopt0_1.14-4_i386.deb) ...
+Selecting previously deselected package rsync.
+Unpacking rsync (from .../rsync_3.0.3-2_i386.deb) ...
+Processing triggers for man-db ...
+Setting up libpopt0 (1.14-4) ...
+Setting up rsync (3.0.3-2) ...
+Setting up pbuilder-satisfydepends-dummy (0.invalid.0) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading extended state information...
+Initializing package states...
+Writing extended state information...
+ -> Finished parsing the build-deps
+Reading package lists...
+Building dependency tree...
+Reading state information...
+aptitude is already the newest version.
+debconf-utils is already the newest version.
+debhelper is already the newest version.
+gnupg is already the newest version.
+debian-backports-keyring is already the newest version.
+The following NEW packages will be installed:
+  fakeroot
+debconf: delaying package configuration, since apt-utils is not installed
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/114kB of archives.
+After this operation, 451kB of additional disk space will be used.
+Selecting previously deselected package fakeroot.
+(Reading database ... 11152 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_1.11_i386.deb) ...
+Processing triggers for man-db ...
+Setting up fakeroot (1.11) ...
+Copying back the cached apt archive contents
+Copying source file
+    -> copying [/afs/ir.stanford.edu/users/s/f/sfeng/home/debian/stanford-server-mailman_19.dsc]
+    -> copying [/afs/ir.stanford.edu/users/s/f/sfeng/home/debian/stanford-server-mailman_19.tar.gz]
+Extracting source
+dpkg-source: warning: extracting unsigned source package (stanford-server-mailman_19.dsc)
+dpkg-source: extracting stanford-server-mailman in stanford-server-mailman-19
+dpkg-source: info: unpacking stanford-server-mailman_19.tar.gz
+ -> Building the package
+dpkg-buildpackage: set CFLAGS to default value: -g -O2
+dpkg-buildpackage: set CPPFLAGS to default value: 
+dpkg-buildpackage: set LDFLAGS to default value: 
+dpkg-buildpackage: set FFLAGS to default value: -g -O2
+dpkg-buildpackage: set CXXFLAGS to default value: -g -O2
+dpkg-buildpackage: source package stanford-server-mailman
+dpkg-buildpackage: source version 19
+dpkg-buildpackage: source changed by Xueshan Feng <sfeng@stanford.edu>
+dpkg-buildpackage: host architecture i386
+ fakeroot debian/rules clean
+dh clean
+   dh_testdir
+   dh_auto_clean
+   dh_clean
+ dpkg-source -i -b stanford-server-mailman-19
+dpkg-source: info: using source format `1.0'
+dpkg-source: info: building stanford-server-mailman in stanford-server-mailman_19.tar.gz
+dpkg-source: info: building stanford-server-mailman in stanford-server-mailman_19.dsc
+ debian/rules build
+dh build
+   dh_testdir
+   dh_auto_configure
+   dh_auto_build
+   dh_auto_test
+ fakeroot debian/rules binary
+dh binary
+   dh_testroot
+   dh_prep
+   dh_installdirs
+   debian/rules override_dh_auto_install
+make[1]: Entering directory `/tmp/buildd/stanford-server-mailman-19'
+rsync -C --recursive --links --perms --times --delete \
+	    --exclude debian /tmp/buildd/stanford-server-mailman-19/ debian/stanford-server-mailman
+install -d debian/stanford-server-mailman/usr/share/man/man1
+install -d debian/stanford-server-mailman/usr/share/man/man8
+for script in `ls usr/sbin` ; do \
+	    pod2man --release=19 --section 8 \
+		--center="System Commands" usr/sbin/${script} \
+		> debian/stanford-server-mailman/usr/share/man/man8/${script}.8 ; \
+	done
+make[1]: Leaving directory `/tmp/buildd/stanford-server-mailman-19'
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_installexamples
+   dh_installman
+   dh_installcatalogs
+   dh_installcron
+   dh_installdebconf
+   dh_installcatalogs
+   dh_installemacsen
+   dh_installifupdown
+   dh_installinfo
+   dh_installinit
+   dh_installmenu
+   dh_installmime
+   dh_installmodules
+   dh_installlogcheck
+   dh_installlogrotate
+   dh_installpam
+   dh_installppp
+   dh_installudev
+   dh_installwm
+   dh_installxfonts
+   dh_bugfiles
+   dh_lintian
+   dh_desktop
+   dh_gconf
+   dh_icons
+   dh_perl
+   dh_scrollkeeper
+   dh_usrlocal
+   dh_link
+   dh_compress
+   dh_fixperms
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package `stanford-server-mailman' in `../stanford-server-mailman_19_all.deb'.
+ dpkg-genchanges  >../stanford-server-mailman_19_i386.changes
+dpkg-genchanges: including full source code in upload
+dpkg-buildpackage: full upload; Debian-native package (full source is included)
+Copying back the cached apt archive contents
+ -> unmounting dev/pts filesystem
+ -> unmounting proc filesystem
+Current time: Wed Jun 29 23:56:23 PDT 2011
+pbuilder-time-stamp: 1309416983
+ -> Copying COW directory
+ -> Invoking pbuilder
+ -> Cleaning COW directory

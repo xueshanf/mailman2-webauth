@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Wed, 29 Jun 2011 23:44:43 -0700
+Source: stanford-server-mailman
+Binary: stanford-server-mailman
+Architecture: source
+Version: 19
+Distribution: stable
+Urgency: low
+Maintainer: Susan Feng <sfeng@stanford.edu>
+Changed-By: Xueshan Feng <sfeng@stanford.edu>
+Description: 
+ stanford-server-mailman - Stanford mailman server package
+Changes: 
+ stanford-server-mailman (19) stable; urgency=low
+ .
+   * Added sys.path.append('/usr/lib/mailman/bin') in mylist to fix module path.
+Checksums-Sha1: 
+ a22fd0fe35bc8ee8c7332c277a576e91966f9c59 631 stanford-server-mailman_19.dsc
+ ccc766b0c036fa354774cb701f12dca103859beb 452648 stanford-server-mailman_19.tar.gz
+Checksums-Sha256: 
+ a480f6fa462a7c652d69e5e15c8cbdf0e984694a11afdab0fbe9200048eb3f02 631 stanford-server-mailman_19.dsc
+ 4da87deb008a467dd420345b93893812e8c1e380f88c4180c83e26e718a6b9d8 452648 stanford-server-mailman_19.tar.gz
+Files: 
+ 2f4b293ee71100f9d64757a5d55cd6a7 631 mail optional stanford-server-mailman_19.dsc
+ 2a825ccb1ad407e209083eb22513d11f 452648 mail optional stanford-server-mailman_19.tar.gz

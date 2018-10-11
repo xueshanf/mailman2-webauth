@@ -1,0 +1,1032 @@
+dpkg-checkbuilddeps: Unmet build dependencies: python-dev
+W: Unmet build-dependency in source
+dpkg-buildpackage: export CFLAGS from dpkg-buildflags (origin: vendor): -g -O2
+dpkg-buildpackage: export CPPFLAGS from dpkg-buildflags (origin: vendor): 
+dpkg-buildpackage: export CXXFLAGS from dpkg-buildflags (origin: vendor): -g -O2
+dpkg-buildpackage: export FFLAGS from dpkg-buildflags (origin: vendor): -g -O2
+dpkg-buildpackage: export LDFLAGS from dpkg-buildflags (origin: vendor): 
+dpkg-buildpackage: source package mailman
+dpkg-buildpackage: source version 1:2.1.13-5~spb60+1
+dpkg-buildpackage: source changed by Xueshan Feng <sfeng@stanford.edu>
+ dpkg-source -i --before-build mailman
+dpkg-checkbuilddeps: Unmet build dependencies: python-dev
+dpkg-buildpackage: warning: Build dependencies/conflicts unsatisfied; aborting.
+dpkg-buildpackage: warning: (Use -d flag to override.)
+dpkg-buildpackage: warning: This is currently a non-fatal warning with -S, but
+dpkg-buildpackage: warning: will probably become fatal in the future.
+ fakeroot debian/rules clean
+dh_testdir
+dh_testroot
+[ ! -f Makefile ] || /usr/bin/make distclean
+rm -rf build-stamp Makefile debian/ucffiles debian/mailman.postinst.ucf
+rm -f debian/mailman.postrm.ucf
+rm -f debian/preinst
+dh_clean
+chmod +x debian/{prerm,postinst}
+[ ! -f configure.orig ] || mv -f configure.orig configure
+ dpkg-source -i -b mailman
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building mailman using existing ./mailman_2.1.13.orig.tar.gz
+dpkg-source: info: building mailman in mailman_2.1.13-5~spb60+1.debian.tar.gz
+dpkg-source: info: building mailman in mailman_2.1.13-5~spb60+1.dsc
+ dpkg-genchanges -S >../mailman_2.1.13-5~spb60+1_source.changes
+dpkg-genchanges: warning: the current version (1:2.1.13-5~spb60+1) is earlier than the previous one (1:2.1.13-5)
+dpkg-genchanges: not including original source code in upload
+ dpkg-source -i --after-build mailman
+dpkg-buildpackage: binary and diff upload (original source NOT included)
+ -> Copying COW directory
+  forking: rm -rf /var/cache/pbuilder/build//cow.14345 
+  forking: cp -al /var/cache/pbuilder/base-squeeze.cow /var/cache/pbuilder/build//cow.14345 
+I: removed stale ilistfile /var/cache/pbuilder/build//cow.14345/.ilist
+  forking: chroot /var/cache/pbuilder/build//cow.14345 cowdancer-ilistcreate /.ilist find . -xdev -path ./home -prune -o \( \( -type l -o -type f \) -a -links +1 -print0 \) | xargs -0 stat --format '%d %i ' 
+ -> Invoking pbuilder
+  forking: pbuilder build --debbuildopts  --debbuildopts  -i --configfile /etc/pbuilder/squeeze --buildplace /var/cache/pbuilder/build//cow.14345 --buildresult /afs/ir.stanford.edu/users/s/f/sfeng/home/debian --debbuildopts  -i --no-targz --internal-chrootexec chroot /var/cache/pbuilder/build//cow.14345 cow-shell /afs/ir.stanford.edu/users/s/f/sfeng/home/debian/mailman_2.1.13-5~spb60+1.dsc 
+W: /root/.pbuilderrc does not exist
+I: Running in no-targz mode
+I: using fakeroot in build.
+I: Current time: Mon Jun 18 21:36:21 PDT 2012
+I: pbuilder-time-stamp: 1340080581
+I: copying local configuration
+I: mounting /proc filesystem
+I: mounting /dev/pts filesystem
+I: Mounting /var/cache/pbuilder/ccache
+I: policy-rc.d already exists
+I: Obtaining the cached apt archive contents
+I: Setting up ccache
+I: Installing the build-deps
+ -> Attempting to satisfy build-dependencies
+ -> Creating pbuilder-satisfydepends-dummy package
+Package: pbuilder-satisfydepends-dummy
+Version: 0.invalid.0
+Architecture: amd64
+Maintainer: Debian Pbuilder Team <pbuilder-maint@lists.alioth.debian.org>
+Description: Dummy package to satisfy dependencies with aptitude - created by pbuilder
+ This package was created automatically by pbuilder to satisfy the
+ build-dependencies of the package being currently built.
+Depends: debhelper (>= 7), autoconf, python-dev, python-support
+dpkg-deb: building package `pbuilder-satisfydepends-dummy' in `/tmp/satisfydepends-aptitude/pbuilder-satisfydepends-dummy.deb'.
+Selecting previously deselected package pbuilder-satisfydepends-dummy.
+(Reading database ... 11955 files and directories currently installed.)
+Unpacking pbuilder-satisfydepends-dummy (from .../pbuilder-satisfydepends-dummy.deb) ...
+dpkg: dependency problems prevent configuration of pbuilder-satisfydepends-dummy:
+ pbuilder-satisfydepends-dummy depends on autoconf; however:
+  Package autoconf is not installed.
+ pbuilder-satisfydepends-dummy depends on python-dev; however:
+  Package python-dev is not installed.
+ pbuilder-satisfydepends-dummy depends on python-support; however:
+  Package python-support is not installed.
+dpkg: error processing pbuilder-satisfydepends-dummy (--install):
+ dependency problems - leaving unconfigured
+Errors were encountered while processing:
+ pbuilder-satisfydepends-dummy
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading extended state information...
+Initializing package states...
+The following NEW packages will be installed:
+  autoconf{a} libexpat1{a} libpython2.6{a} libssl-dev{a} m4{a} 
+  mime-support{a} python{a} python-dev{a} python-minimal{a} 
+  python-support{a} python2.6{a} python2.6-dev{a} python2.6-minimal{a} 
+  zlib1g-dev{a} 
+The following partially installed packages will be configured:
+  pbuilder-satisfydepends-dummy 
+0 packages upgraded, 14 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0 B/13.8 MB of archives. After unpacking 45.4 MB will be used.
+Writing extended state information...
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously deselected package m4.
+(Reading database ... 11955 files and directories currently installed.)
+Unpacking m4 (from .../archives/m4_1.4.14-3_amd64.deb) ...
+Selecting previously deselected package autoconf.
+Unpacking autoconf (from .../autoconf_2.67-2_all.deb) ...
+Selecting previously deselected package python2.6-minimal.
+Unpacking python2.6-minimal (from .../python2.6-minimal_2.6.6-8+b1_amd64.deb) ...
+Selecting previously deselected package mime-support.
+Unpacking mime-support (from .../mime-support_3.48-1_all.deb) ...
+Selecting previously deselected package libexpat1.
+Unpacking libexpat1 (from .../libexpat1_2.0.1-7_amd64.deb) ...
+Selecting previously deselected package python2.6.
+Unpacking python2.6 (from .../python2.6_2.6.6-8+b1_amd64.deb) ...
+Selecting previously deselected package python-minimal.
+Unpacking python-minimal (from .../python-minimal_2.6.6-3+squeeze7_all.deb) ...
+Selecting previously deselected package python.
+Unpacking python (from .../python_2.6.6-3+squeeze7_all.deb) ...
+Selecting previously deselected package libpython2.6.
+Unpacking libpython2.6 (from .../libpython2.6_2.6.6-8+b1_amd64.deb) ...
+Selecting previously deselected package zlib1g-dev.
+Unpacking zlib1g-dev (from .../zlib1g-dev_1%3a1.2.3.4.dfsg-3_amd64.deb) ...
+Selecting previously deselected package libssl-dev.
+Unpacking libssl-dev (from .../libssl-dev_0.9.8o-4squeeze12_amd64.deb) ...
+Selecting previously deselected package python2.6-dev.
+Unpacking python2.6-dev (from .../python2.6-dev_2.6.6-8+b1_amd64.deb) ...
+Selecting previously deselected package python-dev.
+Unpacking python-dev (from .../python-dev_2.6.6-3+squeeze7_all.deb) ...
+Selecting previously deselected package python-support.
+Unpacking python-support (from .../python-support_1.0.10_all.deb) ...
+Processing triggers for man-db ...
+Setting up m4 (1.4.14-3) ...
+Setting up autoconf (2.67-2) ...
+Setting up python2.6-minimal (2.6.6-8+b1) ...
+Setting up mime-support (3.48-1) ...
+update-alternatives: using /usr/bin/see to provide /usr/bin/view (view) in auto mode.
+Setting up libexpat1 (2.0.1-7) ...
+Setting up python2.6 (2.6.6-8+b1) ...
+Setting up python-minimal (2.6.6-3+squeeze7) ...
+Setting up python (2.6.6-3+squeeze7) ...
+Setting up libpython2.6 (2.6.6-8+b1) ...
+Setting up zlib1g-dev (1:1.2.3.4.dfsg-3) ...
+Setting up libssl-dev (0.9.8o-4squeeze12) ...
+Setting up python2.6-dev (2.6.6-8+b1) ...
+Setting up python-dev (2.6.6-3+squeeze7) ...
+Setting up python-support (1.0.10) ...
+Setting up pbuilder-satisfydepends-dummy (0.invalid.0) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading extended state information...
+Initializing package states...
+Writing extended state information...
+ -> Finished parsing the build-deps
+Reading package lists...
+Building dependency tree...
+Reading state information...
+aptitude is already the newest version.
+debconf-utils is already the newest version.
+gnupg is already the newest version.
+debhelper is already the newest version.
+stanford-keyring is already the newest version.
+The following NEW packages will be installed:
+  fakeroot
+debconf: delaying package configuration, since apt-utils is not installed
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0 B/100 kB of archives.
+After this operation, 385 kB of additional disk space will be used.
+Selecting previously deselected package fakeroot.
+(Reading database ... 14296 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_1.14.4-1_amd64.deb) ...
+Processing triggers for man-db ...
+Setting up fakeroot (1.14.4-1) ...
+update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode.
+I: Copying back the cached apt archive contents
+I: Copying source file
+I: copying [/afs/ir.stanford.edu/users/s/f/sfeng/home/debian/mailman_2.1.13-5~spb60+1.dsc]
+I: copying [/afs/ir.stanford.edu/users/s/f/sfeng/home/debian/mailman_2.1.13.orig.tar.gz]
+I: copying [/afs/ir.stanford.edu/users/s/f/sfeng/home/debian/mailman_2.1.13-5~spb60+1.debian.tar.gz]
+I: Extracting source
+dpkg-source: warning: extracting unsigned source package (mailman_2.1.13-5~spb60+1.dsc)
+dpkg-source: info: extracting mailman in mailman-2.1.13
+dpkg-source: info: unpacking mailman_2.1.13.orig.tar.gz
+dpkg-source: info: unpacking mailman_2.1.13-5~spb60+1.debian.tar.gz
+dpkg-source: info: applying 01_defaults.debian.patch
+dpkg-source: info: applying 02_force_autoconf_2.50.patch
+dpkg-source: info: applying 07_snooze.patch
+dpkg-source: info: applying 10_wrapper_uid.patch
+dpkg-source: info: applying 15_mailmanctl_daemonize.patch
+dpkg-source: info: applying 16_update_debian.patch
+dpkg-source: info: applying 20_qmail_to_mailman.debian.patch
+dpkg-source: info: applying 21_newlist_help.patch
+dpkg-source: info: applying 25_site_logo.patch
+dpkg-source: info: applying 51_nocompile.pyc.patch
+dpkg-source: info: applying 52_check_perms_lstat.patch
+dpkg-source: info: applying 53_disable_addons.patch
+dpkg-source: info: applying 59_fix_missing_language_crash.patch
+dpkg-source: info: applying 63_update_default_server_language.patch
+dpkg-source: info: applying 64_correct_html_nesting.patch
+dpkg-source: info: applying 66_donot_let_cache_html_pages.patch
+dpkg-source: info: applying 70_invalid_utf8_dos.patch
+dpkg-source: info: applying 71_date_overflows.patch
+dpkg-source: info: applying 74_admin_non-ascii_emails.patch
+dpkg-source: info: applying 79_archiver_slash.patch
+dpkg-source: info: applying 83-CVE-2010-3089--bug599833.patch
+dpkg-source: info: applying 83_CVE-2011-0707_xss.patch
+dpkg-source: info: applying 99_js_templates.patch
+dpkg-source: info: applying su/81_su_template_en_susubscribeack.patch
+dpkg-source: info: applying su/81_su_template_en_suoptions.patch
+dpkg-source: info: applying su/81_su_template_en_private-error.patch
+dpkg-source: info: applying su/81_su_cgi_suroster.patch
+dpkg-source: info: applying su/81_su_cgi_suprivate.patch
+dpkg-source: info: applying su/81_su_cgi_suoptions.patch
+dpkg-source: info: applying su/81_su_cgi_su_ownerlistinfo.patch
+dpkg-source: info: applying su/81_su_cgi_mylists.patch
+dpkg-source: info: applying su/80_su_utils.patch
+dpkg-source: info: applying su/80_su_template_en_roster.patch
+dpkg-source: info: applying su/80_su_template_en_private.patch
+dpkg-source: info: applying su/80_su_template_en_options.patch
+dpkg-source: info: applying su/80_su_template_en_listinfo.patch
+dpkg-source: info: applying su/80_su_template_en_help.patch
+dpkg-source: info: applying su/80_su_template_en_admlogin.patch
+dpkg-source: info: applying su/80_su_template_en_article.patch
+dpkg-source: info: applying su/80_su_template_en_archtoc.patch
+dpkg-source: info: applying su/80_su_template_en_archtocnombox.patch
+dpkg-source: info: applying su/80_su_template_en_archidxhead.patch
+dpkg-source: info: applying su/80_su_template_en_emptyarchive.patch
+dpkg-source: info: applying su/80_su_securitymanager.patch
+dpkg-source: info: applying su/80_su_oldstylememeberships.patch
+dpkg-source: info: applying su/80_su_makefile_in.patch
+dpkg-source: info: applying su/80_su_maillist.patch
+dpkg-source: info: applying su/80_su_htmlformatter.patch
+dpkg-source: info: applying su/80_su_htmlformat.patch
+dpkg-source: info: applying su/80_su_gui_guibase.patch
+dpkg-source: info: applying su/80_su_gui_general.patch
+dpkg-source: info: applying su/80_su_error.patch
+dpkg-source: info: applying su/80_su_deliverer.patch
+dpkg-source: info: applying su/80_su_cron_mailpasswds.patch
+dpkg-source: info: applying su/80_su_commands_cmd_who.patch
+dpkg-source: info: applying su/80_su_commands_cmd_subscribe.patch
+dpkg-source: info: applying su/80_su_commands_cmd_password.patch
+dpkg-source: info: applying su/80_su_cgi_roster.patch
+dpkg-source: info: applying su/80_su_cgi_rmlist.patch
+dpkg-source: info: applying su/80_su_cgi_private.patch
+dpkg-source: info: applying su/80_su_cgi_options.patch
+dpkg-source: info: applying su/80_su_cgi_listinfo.patch
+dpkg-source: info: applying su/80_su_cgi_edithtml.patch
+dpkg-source: info: applying su/80_su_cgi_confirm.patch
+dpkg-source: info: applying su/80_su_cgi_admindb.patch
+dpkg-source: info: applying su/80_su_cgi_admin.patch
+dpkg-source: info: applying su/80_su_misc_paths.py.in
+I: Building the package
+I: Running cd tmp/buildd/*/ && dpkg-buildpackage -us -uc   -i  -i -rfakeroot
+dpkg-buildpackage: source package mailman
+dpkg-buildpackage: source version 1:2.1.13-5~spb60+1
+dpkg-buildpackage: source changed by Xueshan Feng <sfeng@stanford.edu>
+ dpkg-source -i -i --before-build mailman-2.1.13
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh_testdir
+dh_testroot
+[ ! -f Makefile ] || /usr/bin/make distclean
+rm -rf build-stamp Makefile debian/ucffiles debian/mailman.postinst.ucf
+rm -f debian/mailman.postrm.ucf
+rm -f debian/preinst
+dh_clean
+chmod +x debian/{prerm,postinst}
+[ ! -f configure.orig ] || mv -f configure.orig configure
+ dpkg-source -i -i -b mailman-2.1.13
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building mailman using existing ./mailman_2.1.13.orig.tar.gz
+dpkg-source: info: building mailman in mailman_2.1.13-5~spb60+1.debian.tar.gz
+dpkg-source: info: building mailman in mailman_2.1.13-5~spb60+1.dsc
+ debian/rules build
+cp configure configure.orig
+autoconf
+./configure --prefix=/var/lib/mailman --with-username=list \
+		--with-groupname=list \
+		--with-mail-gid=list --with-cgi-gid=www-data \
+		--without-permcheck --with-mailhost=mailman.stanford.edu \
+		--with-urlhost=mailman.stanford.edu
+checking for --with-python... no
+checking for python... /usr/bin/python
+checking Python interpreter... /usr/bin/python
+checking Python version... 2.6.6
+checking Python's email package... ok
+checking Japanese codecs... ok
+checking Korean codecs... ok
+checking that Python has a working distutils... yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether make sets $(MAKE)... yes
+checking for true... /bin/true
+checking for --without-gcc... no
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether #! works in shell scripts... yes
+checking for --with-var-prefix... no
+checking for --with-permcheck... no
+checking for --with-username... list
+checking for user name "list"... okay
+checking for --with-groupname... list
+checking for group name "list"... okay
+checking permissions on /var/lib/mailman... skipped
+checking for mail wrapper group; i.e. --with-mail-gid... list
+checking for CGI wrapper group; i.e. --with-cgi-gid... www-data
+checking for CGI extensions... no
+checking for --with-mailhost... mailman.stanford.edu
+checking for --with-urlhost... mailman.stanford.edu
+checking for default mail host name... mailman.stanford.edu
+checking for default URL host component... mailman.stanford.edu
+checking for strerror... yes
+checking for setregid... yes
+checking for syslog... yes
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking syslog.h usability... yes
+checking syslog.h presence... yes
+checking for syslog.h... yes
+checking for uid_t in sys/types.h... yes
+checking type of array argument to getgroups... gid_t
+checking for vsnprintf... yes
+configure: creating ./config.status
+config.status: creating misc/paths.py
+config.status: creating Mailman/Defaults.py
+config.status: creating Mailman/mm_cfg.py.dist
+config.status: creating src/Makefile
+config.status: creating misc/Makefile
+config.status: creating bin/Makefile
+config.status: creating Mailman/Makefile
+config.status: creating Mailman/Cgi/Makefile
+config.status: creating Mailman/Logging/Makefile
+config.status: creating Mailman/Archiver/Makefile
+config.status: creating Mailman/Commands/Makefile
+config.status: creating Mailman/Handlers/Makefile
+config.status: creating Mailman/Bouncers/Makefile
+config.status: creating Mailman/Queue/Makefile
+config.status: creating Mailman/MTA/Makefile
+config.status: creating Mailman/Gui/Makefile
+config.status: creating templates/Makefile
+config.status: creating cron/Makefile
+config.status: creating scripts/Makefile
+config.status: creating messages/Makefile
+config.status: creating cron/crontab.in
+config.status: creating misc/mailman
+config.status: creating Makefile
+config.status: creating tests/Makefile
+config.status: creating tests/bounces/Makefile
+config.status: creating tests/msgs/Makefile
+config.status: creating build/bin/add_members
+config.status: creating build/bin/arch
+config.status: creating build/bin/change_pw
+config.status: creating build/bin/check_db
+config.status: creating build/bin/check_perms
+config.status: creating build/bin/cleanarch
+config.status: creating build/bin/clone_member
+config.status: creating build/bin/config_list
+config.status: creating build/bin/convert.py
+config.status: creating build/bin/discard
+config.status: creating build/bin/dumpdb
+config.status: creating build/bin/export.py
+config.status: creating build/bin/find_member
+config.status: creating build/bin/fix_url.py
+config.status: creating build/bin/genaliases
+config.status: creating build/bin/inject
+config.status: creating build/bin/list_admins
+config.status: creating build/bin/list_lists
+config.status: creating build/bin/list_members
+config.status: creating build/bin/list_owners
+config.status: creating build/bin/mailmanctl
+config.status: creating build/bin/mmsitepass
+config.status: creating build/bin/msgfmt.py
+config.status: creating build/bin/newlist
+config.status: creating build/bin/pygettext.py
+config.status: creating build/bin/qrunner
+config.status: creating build/bin/remove_members
+config.status: creating build/bin/reset_pw.py
+config.status: creating build/bin/rmlist
+config.status: creating build/bin/show_qfiles
+config.status: creating build/bin/sync_members
+config.status: creating build/bin/transcheck
+config.status: creating build/bin/unshunt
+config.status: creating build/bin/update
+config.status: creating build/bin/version
+config.status: creating build/bin/withlist
+config.status: creating build/bin/b4b5-archfix
+config.status: creating build/bin/rb-archfix
+config.status: creating build/contrib/check_perms_grsecurity.py
+config.status: creating build/contrib/qmail-to-mailman.py
+config.status: creating build/contrib/rotatelogs.py
+config.status: creating build/cron/bumpdigests
+config.status: creating build/cron/checkdbs
+config.status: creating build/cron/cull_bad_shunt
+config.status: creating build/cron/disabled
+config.status: creating build/cron/gate_news
+config.status: creating build/cron/mailpasswds
+config.status: creating build/cron/nightly_gzip
+config.status: creating build/cron/senddigests
+config.status: executing default commands
+configuration completed at Tue Jun 19 04:36:56 UTC 2012
+/usr/bin/make 
+make[1]: Entering directory `/tmp/buildd/mailman-2.1.13'
+for d in bin cron misc Mailman scripts src templates messages tests; \
+	do \
+	    (cd $d; /usr/bin/make); \
+	done
+make[2]: Entering directory `/tmp/buildd/mailman-2.1.13/bin'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/tmp/buildd/mailman-2.1.13/bin'
+make[2]: Entering directory `/tmp/buildd/mailman-2.1.13/cron'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/tmp/buildd/mailman-2.1.13/cron'
+make[2]: Entering directory `/tmp/buildd/mailman-2.1.13/misc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/tmp/buildd/mailman-2.1.13/misc'
+make[2]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman'
+for d in Cgi Logging Archiver Handlers Bouncers Queue MTA Gui Commands; \
+	do \
+	    (cd $d; /usr/bin/make); \
+	done
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman/Cgi'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman/Cgi'
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman/Logging'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman/Logging'
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman/Archiver'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman/Archiver'
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman/Handlers'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman/Handlers'
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman/Bouncers'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman/Bouncers'
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman/Queue'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman/Queue'
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman/MTA'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman/MTA'
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman/Gui'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman/Gui'
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman/Commands'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman/Commands'
+make[2]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman'
+make[2]: Entering directory `/tmp/buildd/mailman-2.1.13/scripts'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/tmp/buildd/mailman-2.1.13/scripts'
+make[2]: Entering directory `/tmp/buildd/mailman-2.1.13/src'
+gcc -c -I. -DPREFIX="\"/var/lib/mailman\"" -DPYTHON="\"/usr/bin/python\"" -DHELPFUL -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  ./common.c
+gcc -c -I. -DPREFIX="\"/var/lib/mailman\"" -DPYTHON="\"/usr/bin/python\"" -DHELPFUL -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  ./vsnprintf.c
+gcc -DSCRIPT="\"admindb\"" -I. -DCGI_GROUP="\"www-data\"" -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  common.o vsnprintf.o -o admindb ./cgi-wrapper.c
+gcc -DSCRIPT="\"admin\"" -I. -DCGI_GROUP="\"www-data\"" -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  common.o vsnprintf.o -o admin ./cgi-wrapper.c
+gcc -DSCRIPT="\"confirm\"" -I. -DCGI_GROUP="\"www-data\"" -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  common.o vsnprintf.o -o confirm ./cgi-wrapper.c
+gcc -DSCRIPT="\"create\"" -I. -DCGI_GROUP="\"www-data\"" -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  common.o vsnprintf.o -o create ./cgi-wrapper.c
+gcc -DSCRIPT="\"edithtml\"" -I. -DCGI_GROUP="\"www-data\"" -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  common.o vsnprintf.o -o edithtml ./cgi-wrapper.c
+gcc -DSCRIPT="\"listinfo\"" -I. -DCGI_GROUP="\"www-data\"" -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  common.o vsnprintf.o -o listinfo ./cgi-wrapper.c
+gcc -DSCRIPT="\"options\"" -I. -DCGI_GROUP="\"www-data\"" -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  common.o vsnprintf.o -o options ./cgi-wrapper.c
+gcc -DSCRIPT="\"private\"" -I. -DCGI_GROUP="\"www-data\"" -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  common.o vsnprintf.o -o private ./cgi-wrapper.c
+gcc -DSCRIPT="\"rmlist\"" -I. -DCGI_GROUP="\"www-data\"" -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  common.o vsnprintf.o -o rmlist ./cgi-wrapper.c
+gcc -DSCRIPT="\"roster\"" -I. -DCGI_GROUP="\"www-data\"" -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  common.o vsnprintf.o -o roster ./cgi-wrapper.c
+gcc -DSCRIPT="\"subscribe\"" -I. -DCGI_GROUP="\"www-data\"" -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  common.o vsnprintf.o -o subscribe ./cgi-wrapper.c
+gcc -DSCRIPT="\"suroster\"" -I. -DCGI_GROUP="\"www-data\"" -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  common.o vsnprintf.o -o suroster ./cgi-wrapper.c
+gcc -DSCRIPT="\"suoptions\"" -I. -DCGI_GROUP="\"www-data\"" -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  common.o vsnprintf.o -o suoptions ./cgi-wrapper.c
+gcc -DSCRIPT="\"suprivate\"" -I. -DCGI_GROUP="\"www-data\"" -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  common.o vsnprintf.o -o suprivate ./cgi-wrapper.c
+gcc -DSCRIPT="\"mylists\"" -I. -DCGI_GROUP="\"www-data\"" -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  common.o vsnprintf.o -o mylists ./cgi-wrapper.c
+gcc -DSCRIPT="\"ownerlistinfo\"" -I. -DCGI_GROUP="\"www-data\"" -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  common.o vsnprintf.o -o ownerlistinfo ./cgi-wrapper.c
+gcc -I. -DMAIL_GROUP="\"list\"" -g -O2 -g -O2 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DHAVE_STRERROR=1 -DHAVE_SETREGID=1 -DHAVE_SYSLOG=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_SYSLOG_H=1 -DGETGROUPS_T=gid_t -DHAVE_VSNPRINTF=1  common.o vsnprintf.o -o mailman ./mail-wrapper.c
+make[2]: Leaving directory `/tmp/buildd/mailman-2.1.13/src'
+make[2]: Entering directory `/tmp/buildd/mailman-2.1.13/templates'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/tmp/buildd/mailman-2.1.13/templates'
+make[2]: Entering directory `/tmp/buildd/mailman-2.1.13/messages'
+/usr/bin/python ../build/bin/msgfmt.py -o ar/LC_MESSAGES/mailman.mo ar/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o ast/LC_MESSAGES/mailman.mo ast/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o ca/LC_MESSAGES/mailman.mo ca/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o cs/LC_MESSAGES/mailman.mo cs/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o da/LC_MESSAGES/mailman.mo da/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o de/LC_MESSAGES/mailman.mo de/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o es/LC_MESSAGES/mailman.mo es/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o et/LC_MESSAGES/mailman.mo et/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o eu/LC_MESSAGES/mailman.mo eu/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o fi/LC_MESSAGES/mailman.mo fi/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o fr/LC_MESSAGES/mailman.mo fr/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o gl/LC_MESSAGES/mailman.mo gl/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o he/LC_MESSAGES/mailman.mo he/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o hr/LC_MESSAGES/mailman.mo hr/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o hu/LC_MESSAGES/mailman.mo hu/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o ia/LC_MESSAGES/mailman.mo ia/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o it/LC_MESSAGES/mailman.mo it/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o ja/LC_MESSAGES/mailman.mo ja/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o ko/LC_MESSAGES/mailman.mo ko/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o lt/LC_MESSAGES/mailman.mo lt/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o nl/LC_MESSAGES/mailman.mo nl/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o no/LC_MESSAGES/mailman.mo no/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o pl/LC_MESSAGES/mailman.mo pl/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o pt/LC_MESSAGES/mailman.mo pt/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o pt_BR/LC_MESSAGES/mailman.mo pt_BR/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o ro/LC_MESSAGES/mailman.mo ro/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o ru/LC_MESSAGES/mailman.mo ru/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o sk/LC_MESSAGES/mailman.mo sk/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o sl/LC_MESSAGES/mailman.mo sl/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o sr/LC_MESSAGES/mailman.mo sr/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o sv/LC_MESSAGES/mailman.mo sv/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o tr/LC_MESSAGES/mailman.mo tr/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o uk/LC_MESSAGES/mailman.mo uk/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o vi/LC_MESSAGES/mailman.mo vi/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o zh_CN/LC_MESSAGES/mailman.mo zh_CN/LC_MESSAGES/mailman.po
+/usr/bin/python ../build/bin/msgfmt.py -o zh_TW/LC_MESSAGES/mailman.mo zh_TW/LC_MESSAGES/mailman.po
+make[2]: Leaving directory `/tmp/buildd/mailman-2.1.13/messages'
+make[2]: Entering directory `/tmp/buildd/mailman-2.1.13/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/tmp/buildd/mailman-2.1.13/tests'
+make[1]: Leaving directory `/tmp/buildd/mailman-2.1.13'
+sed 's,@VERSION@,1:2.1.13-5~spb60+1,g' < debian/preinst.in > debian/preinst
+touch build-stamp
+ fakeroot debian/rules binary
+dh_testdir
+dh_testroot
+dh_testdir
+dh_testroot
+dh_install
+dh_installdirs
+dh_installdocs ACKNOWLEDGMENTS README* TODO FAQ
+dh_installchangelogs NEWS
+/usr/bin/make doinstall prefix=$(pwd)/debian/mailman/var/lib/mailman \
+		var_prefix=$(pwd)/debian/mailman/var/lib/mailman \
+		icondir=$(pwd)/debian/mailman/usr/share/images/mailman \
+		ICONDIR=$(pwd)/debian/mailman/usr/share/images/mailman
+make[1]: Entering directory `/tmp/buildd/mailman-2.1.13'
+Creating architecture independent directories...
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/logs
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/logs
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/archives
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/archives
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/lists
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/lists
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/locks
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/locks
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/data
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/data
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/spam
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/spam
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/qfiles
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/qfiles
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/archives/private
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/archives/private
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/archives/public
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/archives/public
+chmod o-r /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/archives/private
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/bin
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/bin
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/scripts
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/scripts
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/cron
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/cron
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/pythonlib
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/pythonlib
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Cgi
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Cgi
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Logging
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Logging
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Archiver
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Archiver
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Handlers
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Handlers
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Queue
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Queue
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Bouncers
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Bouncers
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/MTA
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/MTA
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Gui
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Gui
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Commands
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Commands
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/icons
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/icons
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/tests
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/tests
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/tests/bounces
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/tests/bounces
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/tests/msgs
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/tests/msgs
+Creating architecture dependent directories...
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/cgi-bin
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/cgi-bin
+Creating directory hierarchy /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/mail
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/mail
+make[2]: Entering directory `/tmp/buildd/mailman-2.1.13/bin'
+for f in mmsitepass newlist rmlist add_members list_members remove_members clone_member update arch sync_members check_db withlist check_perms find_member version config_list list_lists dumpdb cleanarch list_admins genaliases change_pw mailmanctl qrunner inject unshunt fix_url.py convert.py transcheck b4b5-archfix list_owners msgfmt.py show_qfiles discard rb-archfix reset_pw.py export.py; \
+	do \
+	    /usr/bin/install -c -m 755 ../build/bin/$f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/bin; \
+	done
+make[2]: Leaving directory `/tmp/buildd/mailman-2.1.13/bin'
+make[2]: Entering directory `/tmp/buildd/mailman-2.1.13/cron'
+for f in crontab.in; \
+	do \
+	    /usr/bin/install -c -m 644 $f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/cron; \
+	done
+for f in checkdbs mailpasswds senddigests gate_news nightly_gzip bumpdigests disabled cull_bad_shunt; \
+	do \
+	    /usr/bin/install -c -m 755 ../build/cron/$f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/cron; \
+	done
+make[2]: Leaving directory `/tmp/buildd/mailman-2.1.13/cron'
+make[2]: Entering directory `/tmp/buildd/mailman-2.1.13/misc'
+for i in ./*.jpg ./*.png; \
+	do \
+	  /usr/bin/install -c -m 644 $i /tmp/buildd/mailman-2.1.13/debian/mailman/usr/share/images/mailman; \
+	done
+for d in bin cron scripts tests; \
+	do \
+	    dir=/tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/$d; \
+	    /usr/bin/install -c -m 644 paths.py $dir; \
+	done
+/usr/bin/install -c -m 755 mailman /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/scripts
+/usr/bin/install -c -m 644 sitelist.cfg /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/data
+if [ -z "" -a -d /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/pythonlib/email ] ; \
+	then \
+	    rm -rf /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/pythonlib/email* ; \
+	fi
+for p in ; \
+	do \
+	    gunzip -c ./$p.tar.gz | (cd . ; tar xf -); \
+	    (cd ./$p ; umask 02 ; PYTHONPATH=/tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/pythonlib /usr/bin/python setup.py --quiet install --install-lib /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/pythonlib --install-purelib /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/pythonlib --install-data /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/pythonlib); \
+	done
+make[2]: Leaving directory `/tmp/buildd/mailman-2.1.13/misc'
+make[2]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman'
+for f in ./*.py; \
+	do \
+	    /usr/bin/install -c -m 644 $f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman; \
+	done
+/usr/bin/install -c -m 644 mm_cfg.py.dist /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman
+if [ ! -f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/mm_cfg.py ]; \
+	then \
+	    /usr/bin/install -c -m 644 mm_cfg.py.dist /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/mm_cfg.py; \
+	fi
+for d in Cgi Logging Archiver Handlers Bouncers Queue MTA Gui Commands; \
+	do \
+	    (cd $d; /usr/bin/make DESTDIR= install); \
+	done
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman/Cgi'
+for f in *.py; \
+	do \
+	    /usr/bin/install -c -m 644 ./$f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Cgi; \
+        done
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman/Cgi'
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman/Logging'
+for f in *.py; \
+	do \
+	    /usr/bin/install -c -m 644 ./$f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Logging; \
+	done
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman/Logging'
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman/Archiver'
+for f in __init__.py Archiver.py HyperArch.py HyperDatabase.py pipermail.py; \
+	do \
+	    /usr/bin/install -c -m 644 ./$f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Archiver; \
+	done
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman/Archiver'
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman/Handlers'
+for f in *.py; \
+	do \
+	    /usr/bin/install -c -m 644 ./$f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Handlers; \
+	done
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman/Handlers'
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman/Bouncers'
+for f in *.py; \
+	do \
+	    /usr/bin/install -c -m 644 ./$f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Bouncers; \
+	done
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman/Bouncers'
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman/Queue'
+for f in *.py; \
+	do \
+	    /usr/bin/install -c -m 644 ./$f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Queue; \
+	done
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman/Queue'
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman/MTA'
+for f in *.py; \
+	do \
+	    /usr/bin/install -c -m 644 ./$f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/MTA; \
+	done
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman/MTA'
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman/Gui'
+for f in *.py; \
+	do \
+	    /usr/bin/install -c -m 644 ./$f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Gui; \
+	done
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman/Gui'
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/Mailman/Commands'
+for f in *.py; \
+	do \
+	    /usr/bin/install -c -m 644 ./$f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman/Commands; \
+	done
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman/Commands'
+make[2]: Leaving directory `/tmp/buildd/mailman-2.1.13/Mailman'
+make[2]: Entering directory `/tmp/buildd/mailman-2.1.13/scripts'
+for f in bounces confirm driver join leave owner post request; \
+	do \
+	    /usr/bin/install -c -m 644 ./$f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/scripts; \
+	done
+/usr/bin/install -c -m 644 ./bounces /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/scripts/admin
+/usr/bin/install -c -m 644 ./join    /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/scripts/subscribe
+/usr/bin/install -c -m 644 ./leave   /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/scripts/unsubscribe
+make[2]: Leaving directory `/tmp/buildd/mailman-2.1.13/scripts'
+make[2]: Entering directory `/tmp/buildd/mailman-2.1.13/src'
+for f in admindb admin confirm create edithtml listinfo options private rmlist roster subscribe suroster suoptions suprivate mylists ownerlistinfo; \
+	do \
+	    exe=/tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/cgi-bin/$f; \
+	    /usr/bin/install -c -m 755 $f $exe; \
+	    chmod g+s $exe; \
+	done
+for f in mailman; \
+	do \
+	    /usr/bin/install -c -m 755 $f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/mail; \
+	    chmod g+s /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/mail/$f; \
+	done
+make[2]: Leaving directory `/tmp/buildd/mailman-2.1.13/src'
+make[2]: Entering directory `/tmp/buildd/mailman-2.1.13/templates'
+for d in ar ast ca cs da de en es et eu fi fr gl he hr hu ia it ja ko lt nl no pl pt pt_BR ro ru sk sl sr sv tr uk vi zh_CN zh_TW; \
+	do \
+	    ./../mkinstalldirs /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/$d; \
+	    for f in ./$d/*.html ./$d/*.txt; \
+	    do \
+	    	/usr/bin/install -c -m 644 $f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/$d; \
+	    done; \
+	done
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/ar
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/ast
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/ca
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/cs
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/da
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/de
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/en
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/es
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/et
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/eu
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/fi
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/fr
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/gl
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/he
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/hr
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/hu
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/ia
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/it
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/ja
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/ko
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/lt
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/nl
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/no
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/pl
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/pt
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/pt_BR
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/ro
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/ru
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/sk
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/sl
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/sr
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/sv
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/tr
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/uk
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/vi
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/zh_CN
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/templates/zh_TW
+make[2]: Leaving directory `/tmp/buildd/mailman-2.1.13/templates'
+make[2]: Entering directory `/tmp/buildd/mailman-2.1.13/messages'
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ar/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ar
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ar/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ast/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ast
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ast/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ca/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ca
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ca/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/cs/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/cs
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/cs/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/da/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/da
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/da/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/de/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/de
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/de/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/es/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/es
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/es/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/et/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/et
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/et/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/eu/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/eu
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/eu/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/fi/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/fi
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/fi/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/fr/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/fr
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/fr/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/gl/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/gl
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/gl/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/he/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/he
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/he/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/hr/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/hr
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/hr/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/hu/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/hu
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/hu/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ia/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ia
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ia/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/it/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/it
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/it/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ja/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ja
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ja/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ko/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ko
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ko/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/lt/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/lt
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/lt/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/nl/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/nl
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/nl/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/no/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/no
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/no/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/pl/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/pl
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/pl/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/pt/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/pt
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/pt/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/pt_BR/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/pt_BR
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/pt_BR/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ro/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ro
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ro/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ru/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ru
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/ru/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/sk/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/sk
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/sk/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/sl/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/sl
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/sl/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/sr/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/sr
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/sr/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/sv/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/sv
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/sv/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/tr/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/tr
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/tr/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/uk/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/uk
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/uk/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/vi/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/vi
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/vi/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/zh_CN/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/zh_CN
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/zh_CN/LC_MESSAGES
+Creating language directory /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/zh_TW/LC_MESSAGES
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/zh_TW
+mkdir /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/messages/zh_TW/LC_MESSAGES
+make[2]: Leaving directory `/tmp/buildd/mailman-2.1.13/messages'
+make[2]: Entering directory `/tmp/buildd/mailman-2.1.13/tests'
+for f in ./test*.py ./*Base.py; \
+	do \
+	    /usr/bin/install -c -m 644 $f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/tests; \
+        done
+for f in ./onebounce.py ./fblast.py; \
+	do \
+	    /usr/bin/install -c -m 755 $f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/tests; \
+	done
+for d in bounces msgs; \
+	do \
+	    (cd $d; /usr/bin/make DESTDIR= install); \
+	done
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/tests/bounces'
+for f in ./*.txt; \
+	do \
+	    /usr/bin/install -c -m 644 $f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/tests/bounces; \
+	done
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/tests/bounces'
+make[3]: Entering directory `/tmp/buildd/mailman-2.1.13/tests/msgs'
+for f in ./*.txt; \
+	do \
+	    /usr/bin/install -c -m 644 $f /tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/tests/msgs; \
+	done
+make[3]: Leaving directory `/tmp/buildd/mailman-2.1.13/tests/msgs'
+make[2]: Leaving directory `/tmp/buildd/mailman-2.1.13/tests'
+#/usr/bin/python -c 'from compileall import *; compile_dir("/tmp/buildd/mailman-2.1.13/debian/mailman/var/lib/mailman/Mailman")'
+make[1]: Leaving directory `/tmp/buildd/mailman-2.1.13'
+rmdir debian/mailman/var/lib/mailman/pythonlib
+rm -r debian/mailman/var/lib/mailman/tests
+# cruft: msgfmt.py is only used at build time
+rm  debian/mailman/var/lib/mailman/bin/msgfmt.py
+cd debian/mailman/var/lib/mailman ; \
+	   mv cgi-bin ../../../usr/lib/cgi-bin/mailman ; \
+	   for i in Mailman bin cron mail scripts ; do \
+		mv $i ../../../usr/lib/mailman; \
+	   done
+# link them back to /var/lib/mailman
+for i in debian/mailman/usr/lib/mailman/*; do \
+	   dh_link usr/lib/mailman/`basename $i` var/lib/mailman/`basename $i`; \
+	done
+# Link cgi-bin as well
+dh_link usr/lib/cgi-bin/mailman var/lib/mailman/cgi-bin
+# Backwards compatibility link
+dh_link usr/lib/mailman/mail/mailman usr/lib/mailman/mail/wrapper
+dh_link usr/share/images/mailman usr/share/doc/mailman/images
+rmdir debian/mailman/var/lib/mailman/icons
+dh_link usr/share/images/mailman var/lib/mailman/icons
+mv debian/mailman/var/lib/mailman/templates debian/mailman/etc/mailman
+# link it back to /var/lib/mailman/templates
+dh_link etc/mailman var/lib/mailman/templates
+# note the current version to avoid aborting on same-version
+# reinstallations - see the preinst script
+echo "1:2.1.13-5~spb60+1" > debian/mailman/var/lib/mailman/.version
+dh_installlogrotate
+install -m 0644 debian/mm_cfg.py debian/mailman/usr/lib/mailman/Mailman/mm_cfg.py.dist
+rm debian/mailman/usr/lib/mailman/Mailman/mm_cfg.py
+dh_link etc/mailman/mm_cfg.py \
+		usr/lib/mailman/Mailman/mm_cfg.py
+for bin in list_lists find_member config_list mmsitepass newlist rmlist add_members list_members remove_members arch clone_member sync_members check_db check_perms list_admins withlist; \
+		do dh_link usr/lib/mailman/bin/$bin usr/sbin/$bin; done
+mv debian/mailman/usr/sbin/arch debian/mailman/usr/sbin/mmarch
+dh_installman
+dh_installinit -- start 20 2 3 4 5 .
+dh_installdebconf
+dh_installexamples templates/* debian/mm_cfg.py \
+		debian/mailman/usr/lib/mailman/Mailman/Defaults.py
+dh_strip
+dh_compress -Xmailman-admin.pdf -Xmailman-install.pdf -Xmailman-member-es.pdf -Xmailman-member.pdf
+dh_fixperms
+chown -R root:root debian/mailman
+chown -R root:list \
+		debian/mailman/{etc/mailman,var/lib/mailman,usr/lib/{mailman,cgi-bin/mailman}}
+chown list:list debian/mailman/var/lib/mailman/qfiles
+chown root:list debian/mailman/var/log/mailman
+# set 2755 except messages/
+find debian/mailman/var/lib/mailman -path debian/mailman/var/lib/mailman/messages -prune -o -type d -exec chmod 2775 {} \;
+# make lintian happy
+install -m 0644 debian/lintian-overrides debian/mailman/usr/share/lintian/overrides/mailman
+install -m 0644 debian/contrib/SpamAssassin.py debian/mailman/usr/lib/mailman/Mailman/Handlers
+install -m 0644 debian/contrib/spamd.py debian/mailman/usr/lib/mailman/Mailman/Handlers
+install -m 0755 debian/contrib/postfix-to-mailman.py debian/mailman/usr/share/mailman
+dh_link etc/mailman/postfix-to-mailman.py usr/lib/mailman/bin/postfix-to-mailman.py
+install -m 0644 debian/contrib/apache.conf debian/mailman/etc/mailman
+install -m 0644 debian/contrib/debianpowered.png debian/mailman/usr/share/images/mailman/
+mv `find debian/mailman/etc/mailman -mindepth 1 -maxdepth 1 -type d` debian/mailman/usr/share/mailman
+cp build/contrib/qmail-to-mailman.py debian/mailman/usr/share/mailman
+find debian/mailman/usr/share/mailman -type f -printf '/etc/mailman/%P\n' > debian/ucffiles
+dh_link etc/mailman/qmail-to-mailman.py usr/lib/mailman/bin/qmail-to-mailman.py
+chmod +x debian/mailman/usr/lib/mailman/Mailman/Cgi/*
+chmod +x debian/mailman/usr/lib/mailman/Mailman/Archiver/pipermail.py
+chmod g+s debian/mailman/usr/lib/cgi-bin/mailman/* \
+		debian/mailman/usr/lib/mailman/mail/mailman
+chmod -x debian/mailman/usr/lib/mailman/scripts/paths.py \
+		debian/mailman/usr/lib/mailman/Mailman/Cgi/*
+chmod o-rx debian/mailman/var/lib/mailman/archives/private
+chown list:www-data debian/mailman/var/lib/mailman/archives/private
+chmod 0755 debian/mailman/usr/lib/mailman/cron/*
+chmod 0644 debian/mailman/usr/lib/mailman/cron/{crontab.in,paths.py}
+dh_pysupport -a `find debian/mailman/usr/lib/mailman/Mailman/ -type d`
+install -d debian/mailman/usr/share/python/runtime.d
+install debian/mailman.rtupdate debian/mailman/usr/share/python/runtime.d
+egrep -rslZ '^#!(.*)python' debian/mailman/usr/lib/mailman | xargs -0 chmod a+x --
+find debian/mailman/usr/share/doc/mailman -name "*.html" -exec chmod -x {} \;
+find debian/mailman/usr/share/doc/mailman -name "*.txt" -exec chmod -x {} \;
+# absolute links. Relative links cause trouble for people making multiple levels,
+# e.g. when /var/log is symlinked to somewhere else. They need to be last because
+# otherwise dh_link will revert them back to relative ones.
+#
+# link it back to /var/lib/mailman/locks
+rmdir debian/mailman/var/lib/mailman/locks
+ln -s /var/lock/mailman debian/mailman/var/lib/mailman/locks
+# remove the log directory and link it to /var/log/mailman
+rmdir debian/mailman/var/lib/mailman/logs 
+ln -s /var/log/mailman debian/mailman/var/lib/mailman/logs
+chown root:list debian/mailman/var/log/mailman
+chmod 2770 debian/mailman/var/log/mailman
+dh_installdeb
+dh_shlibdeps
+dh_gencontrol
+dpkg-gencontrol: warning: package mailman: unknown substitution variable ${python:Versions}
+dh_md5sums
+dh_builddeb
+dpkg-deb: building package `mailman' in `../mailman_2.1.13-5~spb60+1_amd64.deb'.
+ dpkg-genchanges  >../mailman_2.1.13-5~spb60+1_amd64.changes
+dpkg-genchanges: warning: the current version (1:2.1.13-5~spb60+1) is earlier than the previous one (1:2.1.13-5)
+dpkg-genchanges: not including original source code in upload
+ dpkg-source -i -i --after-build mailman-2.1.13
+dpkg-buildpackage: binary and diff upload (original source NOT included)
+I: Copying back the cached apt archive contents
+I: unmounting /var/cache/pbuilder/ccache filesystem
+I: unmounting dev/pts filesystem
+I: unmounting proc filesystem
+I: Current time: Mon Jun 18 21:37:20 PDT 2012
+I: pbuilder-time-stamp: 1340080640
+ -> Cleaning COW directory
+  forking: rm -rf /var/cache/pbuilder/build//cow.14345 

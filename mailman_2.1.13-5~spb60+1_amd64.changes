@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Wed, 27 Jul 2011 20:36:49 +0100
+Source: mailman
+Binary: mailman
+Architecture: source amd64
+Version: 1:2.1.13-5~spb60+1
+Distribution: unstable
+Urgency: low
+Maintainer: Mailman for Debian <pkg-mailman-hackers@lists.alioth.debian.org>
+Changed-By: Xueshan Feng <sfeng@stanford.edu>
+Description: 
+ mailman    - Powerful, web-based mailing list manager
+Changes: 
+ mailman (1:2.1.13-5~spb60+1) unstable; urgency=low
+ .
+   * Merged with new upstream release.
+Checksums-Sha1: 
+ 92c9b294a69c606be70c419f849367ee27a4799b 1244 mailman_2.1.13-5~spb60+1.dsc
+ e7eaef967f883a3638c981a6b3d013a17dfaeee7 142395 mailman_2.1.13-5~spb60+1.debian.tar.gz
+ ca0c614a1c366642ec8e2bfd7e56c707e08de72d 9675488 mailman_2.1.13-5~spb60+1_amd64.deb
+Checksums-Sha256: 
+ e32d085ced82d780a3e39d57e26650af19ef1692424860073100e3c788c89103 1244 mailman_2.1.13-5~spb60+1.dsc
+ 673c343893ac704cd1686569963610f2d670ed1f544e4cc95eaed1dbe1c8b8ec 142395 mailman_2.1.13-5~spb60+1.debian.tar.gz
+ 436aecd5ee83f717245fe5644fe028a1fe61a9d9bdb2b26efec82e2c83c5188a 9675488 mailman_2.1.13-5~spb60+1_amd64.deb
+Files: 
+ c196a8ba06f1dc299ecc83c01f85fefc 1244 mail optional mailman_2.1.13-5~spb60+1.dsc
+ 9e5234caaabfeaf4d01163b389b3a190 142395 mail optional mailman_2.1.13-5~spb60+1.debian.tar.gz
+ 93dee2cf355aa6a97614489253b6c5fd 9675488 mail optional mailman_2.1.13-5~spb60+1_amd64.deb

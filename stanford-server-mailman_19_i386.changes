@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Wed, 29 Jun 2011 23:44:43 -0700
+Source: stanford-server-mailman
+Binary: stanford-server-mailman
+Architecture: source all
+Version: 19
+Distribution: oldstable
+Urgency: low
+Maintainer: Susan Feng <sfeng@stanford.edu>
+Changed-By: Xueshan Feng <sfeng@stanford.edu>
+Description: 
+ stanford-server-mailman - Stanford mailman server package
+Changes: 
+ stanford-server-mailman (19) oldstable; urgency=low
+ .
+   * Added sys.path.append('/usr/lib/mailman/bin') in mylist to fix module path.
+Checksums-Sha1: 
+ fc349d7f060cb7e09c796748a50091f004254c28 1168 stanford-server-mailman_19.dsc
+ 8ad38be44e3466cbfae0529e411a08bccc12232c 459104 stanford-server-mailman_19.tar.gz
+ 5dc946516228f60eeb26e7c4f17e8b6176aef14d 168304 stanford-server-mailman_19_all.deb
+Checksums-Sha256: 
+ 8059c3296453562bc89cf46ebe8ce871d71670f2fafb748910129422cd3a4a97 1168 stanford-server-mailman_19.dsc
+ b7b881fc4d15f0da260dee9422cbd1e1312b6e4fcf9920a76dd9e36dc4873e4d 459104 stanford-server-mailman_19.tar.gz
+ f91d4c05086652d149de784911b9e43092f5a4974660fdcbf452a5470c87b573 168304 stanford-server-mailman_19_all.deb
+Files: 
+ f6f4f2371c7999a249512b22d87605c5 1168 mail optional stanford-server-mailman_19.dsc
+ bc204b71f7997928dae38e58a9c83053 459104 mail optional stanford-server-mailman_19.tar.gz
+ c489eace8561654d207de90964d2a8b9 168304 mail optional stanford-server-mailman_19_all.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (GNU/Linux)
+
+iQEcBAEBAgAGBQJODB70AAoJEPaVEuljFlTsYwQH/1Gf47JyDOOJoEJW5mm+kZa2
+1Vsj3IegGXphmLzbEFcha/QG90S7EMPdc99C7w/eg0eZ/I4+X3MamggXZSIxXfzW
+NBTBBSmqZ0dVoKK2swhH3rAgTBq//Bz8QX16FiUl12TWIuQ2Vss5CNppjU+IDJEO
+zAiB/xMvBeObylLOHQJoiCVyd/glIPtW5Gn+3MYtdtDNEA9JXsn1ZI2HwzsgtI62
+A0N7qvkHFMwtet03bkRs0K0pqzxlAfsn/gLW290TMQLAjY/qDFON4I9jQY90XXEu
+qTV4LptLa+aPtcQWVId5EhZtkKKKWt5rFlLJlm7ebJTr7FtnB7Ol4zX/z/sNgzE=
+=EFn9
+-----END PGP SIGNATURE-----
